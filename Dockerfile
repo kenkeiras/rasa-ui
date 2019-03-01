@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN apt-get update
 ## Install base environment
@@ -8,11 +8,11 @@ RUN apt-get install -y wget python python-pip
 # Prepare
 WORKDIR /opt/
 # Download
-RUN wget https://nodejs.org/dist/v6.11.1/node-v6.11.1-linux-x64.tar.xz
+RUN wget https://nodejs.org/dist/v10.15.2/node-v10.15.2-linux-arm64.tar.xz
 # Unpack
-RUN tar xf node-v6.11.1-linux-x64.tar.xz
-RUN rm node-v6.11.1-linux-x64.tar.xz
-RUN mv node-v6.11.1-linux-x64 node
+RUN tar xf node-v10.15.2-linux-arm64.tar.xz
+RUN rm node-v10.15.2-linux-arm64.tar.xz
+RUN mv node-v10.15.2-linux-arm64 node
 # Install
 WORKDIR /opt/node
 RUN mv bin/* /usr/bin/
